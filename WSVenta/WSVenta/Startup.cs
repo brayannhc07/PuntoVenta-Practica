@@ -27,6 +27,7 @@ namespace WSVenta {
 				options.AddPolicy( name: MyCors,
 					builder => {
 						builder.WithOrigins( "*" );
+						builder.WithHeaders( "*" );
 					} );
 			} );
 			services.AddControllers();

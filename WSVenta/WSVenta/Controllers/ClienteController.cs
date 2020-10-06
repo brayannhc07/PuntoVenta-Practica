@@ -17,7 +17,7 @@ namespace WSVenta.Controllers {
 			var oRespuesta = new Respuesta();
 			try {
 				using( var db = new VentaRealContext() ) {
-					var lst = db.Cliente.ToList();
+					var lst = db.Cliente.OrderByDescending( d => d.Id ).ToList();
 					oRespuesta.Exito = 1;
 					oRespuesta.Data = lst;
 				}
@@ -29,7 +29,7 @@ namespace WSVenta.Controllers {
 			return Ok( oRespuesta );
 		}
 		[HttpPost]
-		public IActionResult Create(ClienteRequest oModel) {
+		public IActionResult Create( ClienteRequest oModel ) {
 			var oRespuesta = new Respuesta();
 			try {
 				using( var db = new VentaRealContext() ) {
@@ -45,11 +45,11 @@ namespace WSVenta.Controllers {
 			catch( Exception ex ) {
 				oRespuesta.Mensaje = ex.Message;
 			}
-			return Ok(oRespuesta);
+			return Ok( oRespuesta );
 
 		}
 		[HttpPut]
-		public IActionResult Update(ClienteRequest oModel) {
+		public IActionResult Update( ClienteRequest oModel ) {
 			var oRespuesta = new Respuesta();
 			try {
 				using( var db = new VentaRealContext() ) {
@@ -64,15 +64,15 @@ namespace WSVenta.Controllers {
 			catch( Exception ex ) {
 				oRespuesta.Mensaje = ex.Message;
 			}
-			return Ok(oRespuesta);
+			return Ok( oRespuesta );
 
 		}
 		[HttpDelete]
-		public IActionResult Delete(ClienteRequest oModel) {
+		public IActionResult Delete( ClienteRequest oModel ) {
 			var oRespuesta = new Respuesta();
 			try {
 				using( var db = new VentaRealContext() ) {
-					var oCliente = db.Cliente.Find( oModel.Id);
+					var oCliente = db.Cliente.Find( oModel.Id );
 					db.Remove( oCliente );
 					db.SaveChanges();
 					oRespuesta.Exito = 1;
@@ -81,7 +81,7 @@ namespace WSVenta.Controllers {
 			catch( Exception ex ) {
 				oRespuesta.Mensaje = ex.Message;
 			}
-			return Ok(oRespuesta);
+			return Ok( oRespuesta );
 
 		}
 	}
