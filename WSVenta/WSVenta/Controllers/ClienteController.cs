@@ -20,7 +20,7 @@ namespace WSVenta.Controllers {
 					var lst = db.Cliente.OrderByDescending( d => d.Id ).ToList();
 					oRespuesta.Exito = 1;
 					oRespuesta.Data = lst;
-				}
+				} 
 			}
 			catch( Exception ex ) {
 
@@ -67,12 +67,12 @@ namespace WSVenta.Controllers {
 			return Ok( oRespuesta );
 
 		}
-		[HttpDelete]
-		public IActionResult Delete( ClienteRequest oModel ) {
+		[HttpDelete("{Id}")]
+		public IActionResult Delete( int Id ) {
 			var oRespuesta = new Respuesta();
 			try {
 				using( var db = new VentaRealContext() ) {
-					var oCliente = db.Cliente.Find( oModel.Id );
+					var oCliente = db.Cliente.Find( Id );
 					db.Remove( oCliente );
 					db.SaveChanges();
 					oRespuesta.Exito = 1;
