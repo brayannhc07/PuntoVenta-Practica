@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bryan\\Documents\\Projects\\PuntoVenta-Practica\\WSVenta\\WSVenta\\WSVenta.csproj": {}
+    "C:\\Users\\Bryan\\Documents\\Proyectos\\PuntoVenta-Practica\\WSVenta\\WSVenta\\WSVenta.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bryan\\Documents\\Projects\\PuntoVenta-Practica\\WSVenta\\WSVenta\\WSVenta.csproj": {
+    "C:\\Users\\Bryan\\Documents\\Proyectos\\PuntoVenta-Practica\\WSVenta\\WSVenta\\WSVenta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bryan\\Documents\\Projects\\PuntoVenta-Practica\\WSVenta\\WSVenta\\WSVenta.csproj",
+        "projectUniqueName": "C:\\Users\\Bryan\\Documents\\Proyectos\\PuntoVenta-Practica\\WSVenta\\WSVenta\\WSVenta.csproj",
         "projectName": "WSVenta",
-        "projectPath": "C:\\Users\\Bryan\\Documents\\Projects\\PuntoVenta-Practica\\WSVenta\\WSVenta\\WSVenta.csproj",
+        "projectPath": "C:\\Users\\Bryan\\Documents\\Proyectos\\PuntoVenta-Practica\\WSVenta\\WSVenta\\WSVenta.csproj",
         "packagesPath": "C:\\Users\\Bryan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bryan\\Documents\\Projects\\PuntoVenta-Practica\\WSVenta\\WSVenta\\obj\\",
+        "outputPath": "C:\\Users\\Bryan\\Documents\\Proyectos\\PuntoVenta-Practica\\WSVenta\\WSVenta\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -44,6 +44,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -53,6 +57,10 @@
             "MySql.Data.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.21, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.7.1, )"
             }
           },
           "imports": [

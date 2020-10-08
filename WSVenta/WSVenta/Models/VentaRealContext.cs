@@ -11,6 +11,7 @@ namespace WSVenta.Models {
 			: base( options ) {
 		}
 
+		public virtual DbSet<Usuario> Usuario { get; set; }
 		public virtual DbSet<Cliente> Cliente { get; set; }
 		public virtual DbSet<Concepto> Concepto { get; set; }
 		public virtual DbSet<Producto> Producto { get; set; }
@@ -24,6 +25,31 @@ namespace WSVenta.Models {
 		}
 
 		protected override void OnModelCreating( ModelBuilder modelBuilder ) {
+			modelBuilder.Entity<Usuario>( entity => {
+				entity.ToTable( "usuario" );
+
+				entity.Property( e => e.Id )
+					.HasColumnName( "id" )
+					.HasColumnType( "int(11)" );
+
+				entity.Property( e => e.Email )
+					.IsRequired()
+					.HasColumnName( "email" )
+					.HasMaxLength( 100 )
+					.IsUnicode( false );
+
+				entity.Property( e => e.Nombre )
+					.IsRequired()
+					.HasColumnName( "nombre" )
+					.HasMaxLength( 50 )
+					.IsUnicode( false );
+
+				entity.Property( e => e.Password )
+					.IsRequired()
+					.HasColumnName( "password" )
+					.HasMaxLength( 256 )
+					.IsUnicode( false );
+			} );
 			modelBuilder.Entity<Cliente>( entity => {
 				entity.ToTable( "cliente" );
 
